@@ -16,6 +16,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -59,7 +60,12 @@ class MainActivity : ComponentActivity() {
                         .fillMaxWidth()
                         //.background(Color.Black)
                         .clip(
-                            RoundedCornerShape(topEnd = 10.dp, topStart = 10.dp, bottomStart = 10.dp, bottomEnd = 10.dp)
+                            RoundedCornerShape(
+                                topEnd = 10.dp,
+                                topStart = 10.dp,
+                                bottomStart = 10.dp,
+                                bottomEnd = 10.dp
+                            )
                         )
                         .padding(15.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
@@ -83,10 +89,13 @@ class MainActivity : ComponentActivity() {
                    verticalArrangement = Arrangement.Center,
                    horizontalAlignment = Alignment.CenterHorizontally
                ){
-                   TextField(value =in1, onValueChange = { text ->
-                       in1 =text
-
-                   })
+                   OutlinedTextField(
+                       value = in1,
+                      textStyle = TextStyle(color =Color.Black),
+                       onValueChange = {
+                           in1 = it
+                       }
+                   )
                    Row{
                        Button(
 
@@ -133,16 +142,23 @@ class MainActivity : ComponentActivity() {
                        }
                        Button(modifier = Modifier
                            .padding(horizontal = 5.dp, vertical = 2.dp),
-                           onClick ={
-                           in1+= 0.toString()
-                       },
+                           onClick = {
+                               if (in1 == "+" || in1 == "-" || in1 == "X") {
+                                   in1 = 0.toString()
+                               } else {
+                                   in1 += 0.toString()
+                               }
+                           },
                            colors = ButtonDefaults.buttonColors(
                                containerColor = Color.Black
                            )
                        ){
                            Text(
                                text ="0",
-                               fontSize = 10.sp,
+                               style = TextStyle(
+                                   color = Color.White,
+                                   fontSize = 10.sp,
+                               )
                            )
 
                        }
@@ -186,24 +202,34 @@ class MainActivity : ComponentActivity() {
                        Button(  modifier = Modifier
                            .padding(horizontal = 5.dp, vertical = 2.dp),
                            onClick ={
-
-                           in1= in1 + 7.toString()
-                       }, colors = ButtonDefaults.buttonColors(
+                               if (in1 == "+" || in1 == "-" || in1 == "X") {
+                                   in1 = 7.toString()
+                               } else {
+                                   in1 += 7.toString()
+                               }
+                                    },
+                           colors = ButtonDefaults.buttonColors(
                                containerColor = Color.Black
                            )
                        ){
                            Text(
 
                                text ="7",
-                               fontSize = 10.sp,
+                               style = TextStyle(
+                                   color = Color.White,
+                                   fontSize = 10.sp,
+                               )
                            )
 
                        }
                        Button(modifier = Modifier
                            .padding(horizontal = 5.dp, vertical = 2.dp),
                            onClick ={
-
-                           in1= in1 + 8.toString()
+                               if (in1 == "+" || in1 == "-" || in1 == "X") {
+                                   in1 = 8.toString()
+                               } else {
+                                   in1 += 8.toString()
+                               }
                        }, colors = ButtonDefaults.buttonColors(
                                containerColor = Color.Black
                            )
@@ -211,15 +237,21 @@ class MainActivity : ComponentActivity() {
                            Text(
                                modifier = Modifier.padding(3.dp),
                                text ="8",
-                               fontSize = 10.sp,
+                               style = TextStyle(
+                                   color = Color.White,
+                                   fontSize = 10.sp,
+                               )
                            )
 
                        }
                        Button(modifier = Modifier
                            .padding(horizontal = 5.dp, vertical = 2.dp),
                            onClick ={
-
-                           in1= in1 + 9.toString()
+                               if (in1 == "+" || in1 == "-" || in1 == "X") {
+                                   in1 = 9.toString()
+                               } else {
+                                   in1 += 9.toString()
+                               }
                        }, colors = ButtonDefaults.buttonColors(
                                containerColor = Color.Black
                            )
@@ -227,7 +259,10 @@ class MainActivity : ComponentActivity() {
                            Text(
                                modifier = Modifier.padding(3.dp),
                                text ="9",
-                               fontSize = 10.sp,
+                               style = TextStyle(
+                                   color = Color.White,
+                                   fontSize = 10.sp,
+                               )
                            )
 
                        }
@@ -257,45 +292,63 @@ class MainActivity : ComponentActivity() {
                        Button(modifier = Modifier
                            .padding(horizontal = 5.dp, vertical = 2.dp),
                            onClick ={
-
-                           in1=in1 + 4.toString()
+                               if (in1 == "+" || in1 == "-" || in1 == "X") {
+                                   in1 = 4.toString()
+                               } else {
+                                   in1 += 4.toString()
+                               }
                        }, colors = ButtonDefaults.buttonColors(
                                containerColor = Color.Black
                            )
                        ){
                            Text(
                                text ="4",
-                               fontSize = 10.sp,
+                               style = TextStyle(
+                                   color = Color.White,
+                                   fontSize = 10.sp,
+                               )
                            )
 
                        }
                        Button(modifier = Modifier
                            .padding(horizontal = 5.dp, vertical = 2.dp),
                            onClick ={
-
-                           in1=in1 + 5.toString()
+                               if (in1 == "+" || in1 == "-" || in1 == "X") {
+                                   in1 = 5.toString()
+                               } else {
+                                   in1 += 5.toString()
+                               }
                        }, colors = ButtonDefaults.buttonColors(
                                containerColor = Color.Black
                            )
                        ){
                            Text(
                                text ="5",
-                               fontSize = 10.sp,
+                               style = TextStyle(
+                                   color = Color.White,
+                                   fontSize = 10.sp,
+                               )
                            )
 
                        }
                        Button(modifier = Modifier
                            .padding(horizontal = 5.dp, vertical = 2.dp),
                            onClick ={
-
-                           in1=in1 + 6.toString()
+                               if (in1 == "+" || in1 == "-" || in1 == "X") {
+                                   in1 = 6.toString()
+                               } else {
+                                   in1 += 6.toString()
+                               }
                        }, colors = ButtonDefaults.buttonColors(
                                containerColor = Color.Black
                            )
                        ){
                            Text(
                                text ="6",
-                               fontSize = 10.sp,
+                               style = TextStyle(
+                                   color = Color.White,
+                                   fontSize = 10.sp,
+                               )
                            )
 
                        }
@@ -324,45 +377,63 @@ class MainActivity : ComponentActivity() {
                        Button(modifier = Modifier
                            .padding(horizontal = 5.dp, vertical = 2.dp),
                            onClick ={
-
-                           in1=in1 + 1.toString()
+                               if (in1 == "+" || in1 == "-" || in1 == "X") {
+                                   in1 = 1.toString()
+                               } else {
+                                   in1 += 1.toString()
+                               }
                        }, colors = ButtonDefaults.buttonColors(
                                containerColor = Color.Black
                            )
                        ){
                            Text(
                                text ="1",
-                               fontSize = 10.sp,
+                               style = TextStyle(
+                                   color = Color.White,
+                                   fontSize = 10.sp,
+                               )
                            )
 
                        }
                        Button(modifier = Modifier
                            .padding(horizontal = 5.dp, vertical = 2.dp),
                            onClick ={
-
-                           in1=in1 + 2.toString()
+                               if (in1 == "+" || in1 == "-" || in1 == "X") {
+                                   in1 = 2.toString()
+                               } else {
+                                   in1 += 2.toString()
+                               }
                        }, colors = ButtonDefaults.buttonColors(
                                containerColor = Color.Black
                            )
                        ){
                            Text(
                                text ="2",
-                               fontSize = 10.sp,
+                               style = TextStyle(
+                                   color = Color.White,
+                                   fontSize = 10.sp,
+                               )
                            )
 
                        }
                        Button(modifier = Modifier
                            .padding(horizontal = 5.dp, vertical = 2.dp),
                            onClick ={
-
-                           in1=in1 + 3.toString()
+                               if (in1 == "+" || in1 == "-" || in1 == "X") {
+                                   in1 = 3.toString()
+                               } else {
+                                   in1 += 3.toString()
+                               }
                        }, colors = ButtonDefaults.buttonColors(
                                containerColor = Color.Black
                            )
                        ){
                            Text(
                                text ="3",
-                               fontSize = 10.sp,
+                               style = TextStyle(
+                                   color = Color.White,
+                                   fontSize = 10.sp,
+                               )
                            )
 
                        }
